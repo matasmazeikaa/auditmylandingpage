@@ -97,9 +97,9 @@ onMounted(() => {
 <template>
 	<header
 		ref="headerRef"
-		class="header"
+		class="header bg-blue"
 	>
-		<nav class="h-full pl-40">
+		<nav class="h-full p-20 lg:pl-40 border-b-2 border-t-2 border-black">
 			<div class="h-full flex justify-between items-center mx-auto">
 				<div class="flex justify-between items-center w-full ">
 					<NuxtLink
@@ -149,32 +149,30 @@ onMounted(() => {
 							</li>
 						</ul>
 					</div>
-					<div class="py-28 px-44 bg-dark flex gap-8 items-center">
+
+					<div class="hidden lg:flex py-28 px-44 bg-blue-dark border-l-2 border-dark gap-8 items-center">
 						<span class="link text-white">Get an audit</span>
 						<div class="py-4 px-8 w-fit bg-white rounded-full">
 							<span class="link">$99</span>
 						</div>
 					</div>
 				</div>
-				<!-- <div
+				<div
 					id="hamburger-1"
 					class="hamburger block lg:hidden ml-32 relative z-10"
 					:class="{ 'is-active': isMobileMenuOpen }"
 					@click="isMobileMenuOpen = !isMobileMenuOpen"
 				>
 					<span
-						class="line"
-						:class="{ 'line--dark': isWhite, }"
+						class="line bg-dark"
 					></span>
 					<span
-						class="line"
-						:class="{ 'line--dark': isWhite, }"
+						class="line bg-dark "
 					></span>
 					<span
-						class="line"
-						:class="{ 'line--dark': isWhite }"
+						class="line bg-dark"
 					></span>
-				</div> -->
+				</div>
 			</div>
 		</nav>
 
@@ -182,15 +180,15 @@ onMounted(() => {
 			class="popup"
 			:class="{ 'popup--active': isMobileMenuOpen }"
 		>
-			<div class="h-full flex flex-col items-center justify-center p-96">
-				<ul class="flex flex-col text-center mt-auto">
+			<div class="bg-blue h-full flex flex-col items-center justify-center p-96">
+				<ul class="mb-40 flex flex-col text-center">
 					<li
 						v-for="item in items"
 						:key="item.title"
 					>
 						<NuxtLink
 							:to="item.to"
-							class="text-body-1 hover:opacity-75 transition-opacity block text-black p-20"
+							class="link hover:opacity-75 transition-opacity block text-black p-20"
 							@click="isMobileMenuOpen = false"
 						>
 							{{ item.title }}
@@ -198,21 +196,16 @@ onMounted(() => {
 					</li>
 				</ul>
 
-				<div class="flex flex-col text-center mt-24 max-w-[32.8rem] w-full">
-					<div class="mb-16">
-						<a
-							class="phone-number text-primary-blue"
-							href="tel:+37061809966"
-						>
-							+37061809966
-						</a>
-					</div>
-					<Button
-						to="/kontaktai"
-						@click="isMobileMenuOpen = false"
-					>
-						Susisiekti
-					</Button>
+				<div class="mb-48 flex gap-16 flex-wrap">
+					<a target="_blank" href="https://twitter.com/auditmy_lp" class="flex justify-center items-center p-12 shadow-[2px_2px_0px_0px_#000] rounded-[10rem] border-2 border-solid border-dark">
+						<IconX />
+					</a>
+					<a target="_blank" href="https://www.linkedin.com/company/audit-my-landing-page" class="flex justify-center items-center p-12 shadow-[2px_2px_0px_0px_#000] rounded-[10rem] border-2 border-solid border-dark">
+						<IconLinkedin />
+					</a>
+					<a target="_blank" href="https://www.instagram.com/auditmylandingpage" class="flex justify-center items-center p-12 shadow-[2px_2px_0px_0px_#000] rounded-[10rem] border-2 border-solid border-dark">
+						<IconInstagram />
+					</a>
 				</div>
 			</div>
 		</div>
@@ -220,11 +213,6 @@ onMounted(() => {
 </template>
 
 <style>
-
-.header {
-	border-top: 2px solid #000;
-	border-bottom: 2px solid #000;
-}
 
 /* Dropdown Button */
 .dropbtn {
@@ -332,22 +320,22 @@ onMounted(() => {
 }
 
 .hamburger .line{
-  width: 18px;
+  width: 32px;
   height: 2px;
-  background-color: var(--primary-white);
   display: block;
-  margin: 4px auto;
+  margin: 8px auto;
+  border-radius: 999999px;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .hamburger .line--dark {
-	background-color: var(--primary-black);
+	background-color: black;
 }
 
 #hamburger-1.is-active .line {
-	background-color: var(--primary-black);
+	background-color: black;
 }
 
 #hamburger-1.is-active .line:nth-child(2){
@@ -358,7 +346,7 @@ onMounted(() => {
   -webkit-transform: translateY(1px) rotate(45deg);
   -ms-transform: translateY(1px) rotate(45deg);
   -o-transform: translateY(1px) rotate(45deg);
-  transform: translateY(5px) rotate(45deg);
+  transform: translateY(13px) rotate(45deg);
 }
 
 #hamburger-1.is-active .line:nth-child(3){

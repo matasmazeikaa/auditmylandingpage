@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 interface Props {
 	variant: 'primary';
-	color: 'dark' | 'white';
+	color: 'dark' | 'white' | 'yellow';
 	to?: string;
 	isLoading?: boolean;
 }
 
 withDefaults(defineProps<Props>(), {
 	variant: 'primary',
-	color: 'dark',
+	color: 'yellow',
 });
 </script>
 
@@ -18,7 +18,8 @@ withDefaults(defineProps<Props>(), {
 			v-if="to"
 			:class="{
 				'text-h5 flex justify-center items-center shadow-[2px_2px_0px_0px_#000] px-24 py-16 rounded-[10rem] border-2 border-solid border-dark': variant === 'primary',
-				'bg-white text-dark': color === 'white'
+				'bg-white text-dark': color === 'white',
+				'bg-yellow text-dark': color === 'yellow',
 			}"
 			:to="to"
 		>
@@ -31,6 +32,7 @@ withDefaults(defineProps<Props>(), {
 			:class="{
 				'text-h5 flex justify-center items-center shadow-[2px_2px_0px_0px_#000] px-24 py-16 rounded-[10rem] border-2 border-solid border-dark': variant === 'primary',
 				'bg-white text-dark': color === 'white',
+				'bg-yellow text-dark': color === 'yellow',
 				'btn-primary--loading': isLoading,
 			}"
 		>

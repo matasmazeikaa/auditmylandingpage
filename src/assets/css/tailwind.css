@@ -86,7 +86,7 @@
 
 @layer components {
 	.section-padding {
-		padding: 0 4.2rem;
+		padding: 0 2rem;
 	}
 
 	@screen 2xl {

@@ -1,8 +1,9 @@
-
 const APP_META = {
+	title: 'myApp',
+	description: 'myApp',
 	favicon: '/favicon.ico',
-	url: 'https://AuditMyLandingPage.lt',
-	language: 'lt',
+	url: 'https://myapp.com',
+	language: 'en',
 };
 
 export default defineNuxtConfig({
@@ -10,7 +11,7 @@ export default defineNuxtConfig({
 	extends: ['nuxt-seo-kit'],
 
 	// server side rendering
-	ssr: false,
+	ssr: true,
 
 	// source directory
 	srcDir: 'src',
@@ -20,35 +21,19 @@ export default defineNuxtConfig({
 		modules: '~/modules',
 	},
 
-	css: ['~/assets/css/tailwind.css'],
-
 	// runtime config
 	runtimeConfig: {
 		public: {
 			siteUrl: APP_META.url || 'https://example.com',
+			siteName: APP_META.title,
+			siteDescription: APP_META.description,
 			language: APP_META.language,
 		},
 	},
 
-	// image: {
-	// 	providers: {
-	// 		localImageSharp: {
-	// 			provider: '~/providers/localImagesSharp',
-	// 			options: {
-	// 				baseURL: `${process.env.STRAPI_URL}/uploads/`,
-	// 			},
-	// 		},
-	// 	},
-	// 	provider: 'localImageSharp',
-	// },
-
-	// strapi: {
-	// 	url: process.env.STRAPI_URL || 'http://127.0.0.1:1338',
-	// },
-
 	// typescript
 	typescript: {
-		typeCheck: false,
+		typeCheck: true,
 		tsConfig: {
 			compilerOptions: {
 				forceConsistentCasingInFileNames: true,
@@ -74,42 +59,47 @@ export default defineNuxtConfig({
 		],
 	},
 
-	delayHydration: {
-		mode: 'init',
-	},
-
 	// modules
 	modules: [
-		'@nuxtjs/tailwindcss',
-		'@nuxt/image',
+		'@nuxtjs/strapi',
 		'@formkit/nuxt',
+		'@nuxtjs/google-fonts',
+		'@nuxtjs/tailwindcss',
 		'@unlighthouse/nuxt',
 		'@vueuse/nuxt',
 		'nuxt-headlessui',
-		'nuxt-delay-hydration',
 		'@nuxtjs/eslint-module',
-		// '@nuxtjs/strapi',
-		'@nuxtjs/robots',
-		'nuxt-swiper',
-		[
-			'@nuxtjs/google-fonts',
-			{
-				families: {
-					Montserrat: [
-						400,
-						600,
-					],
-					'Bricolage+Grotesque': [
-						500,
-						600,
-					],
-				},
-			},
-		],
 	],
 
 	eslint: {
 		eslintPath: 'eslint',
+	},
+
+	// module options
+	// google fonts
+	googleFonts: {
+		families: {
+			Roboto: true,
+			Nunito: [500],
+			Raleway: [
+				400,
+				500,
+				600,
+				700,
+			],
+			Montserrat: [
+				400,
+				500,
+				600,
+				700,
+			],
+			'Open Sans': [
+				400,
+				500,
+				600,
+				700,
+			],
+		},
 	},
 
 	// headlessui

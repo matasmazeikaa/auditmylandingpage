@@ -39,15 +39,15 @@ const LINKS = [
 			</div>
 
 			<div class="mb-48 flex gap-16 flex-wrap">
-				<NuxtLink class="flex justify-center items-center p-12 shadow-[2px_2px_0px_0px_#000] rounded-[10rem] border-2 border-solid border-dark">
+				<a target="_blank" href="https://twitter.com/auditmy_lp" class="flex justify-center items-center p-12 shadow-[2px_2px_0px_0px_#000] rounded-[10rem] border-2 border-solid border-dark">
 					<IconX />
-				</NuxtLink>
-				<NuxtLink class="flex justify-center items-center p-12 shadow-[2px_2px_0px_0px_#000] rounded-[10rem] border-2 border-solid border-dark">
+				</a>
+				<a target="_blank" href="https://www.linkedin.com/company/audit-my-landing-page" class="flex justify-center items-center p-12 shadow-[2px_2px_0px_0px_#000] rounded-[10rem] border-2 border-solid border-dark">
 					<IconLinkedin />
-				</NuxtLink>
-				<NuxtLink class="flex justify-center items-center p-12 shadow-[2px_2px_0px_0px_#000] rounded-[10rem] border-2 border-solid border-dark">
+				</a>
+				<a target="_blank" href="https://www.instagram.com/auditmylandingpage" class="flex justify-center items-center p-12 shadow-[2px_2px_0px_0px_#000] rounded-[10rem] border-2 border-solid border-dark">
 					<IconInstagram />
-				</NuxtLink>
+				</a>
 			</div>
 
 			<div class="text-body-2">
