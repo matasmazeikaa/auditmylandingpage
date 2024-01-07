@@ -51,7 +51,7 @@ watch(isMobileMenuOpen, (value) => {
 		ref="headerRef"
 		class="header bg-blue"
 	>
-		<nav class="h-full p-20 lg:pl-40 border-b-2 border-t-2 border-black">
+		<nav class="h-full px-20 lg:pl-40 border-b-2 border-t-2 border-black">
 			<div class="h-full flex justify-between items-center mx-auto">
 				<div class="flex justify-between items-center w-full ">
 					<NuxtLink
