@@ -39,7 +39,7 @@ My Hero CRO (Conversion Rate Optimization) service involves redesigning this cru
 	},
 ]);
 
-const toggleAnswer = (index) => {
+const toggleAnswer = (index: number) => {
 	faqs.value[index].expanded = !faqs.value[index].expanded;
 };
 </script>

@@ -9,12 +9,8 @@ interface Props {
 }
 
 const headerRef = ref<HTMLElement | null>(null);
-const isWhiteLocal = ref(false);
-const hoveredNavItem = ref<null|number>(null);
-const currentScrollPosition = ref(0);
-const isScrollingDown = ref(false);
 
-const props = defineProps<Props>();
+defineProps<Props>();
 
 const items = computed(() => [
 	{
@@ -41,56 +37,12 @@ const items = computed(() => [
 
 const isMobileMenuOpen = ref(false);
 
-const isWhite = computed(() => isWhiteLocal.value || props.white);
-
 watch(isMobileMenuOpen, (value) => {
 	if (value) {
 		disableBodyScroll(document.body);
 	} else {
 		enableBodyScroll(document.body);
 	}
-});
-
-const checkIfScrolledBelowHeroSection = () => {
-	const heroSection = document.getElementsByClassName('hero-section')[0];
-
-	if (!heroSection) {
-		return;
-	}
-
-	const scrollPosition = window.scrollY;
-
-	if (scrollPosition + (headerRef.value?.offsetHeight || 0) > heroSection.offsetHeight) {
-		isWhiteLocal.value = true;
-	} else {
-		isWhiteLocal.value = false;
-	}
-};
-
-const checkIfScrollingUpOrDown = () => {
-	const scrollPosition = window.scrollY;
-
-	if (scrollPosition < (headerRef.value?.offsetHeight || 0)) {
-		isScrollingDown.value = false;
-
-		return;
-	}
-
-	if (scrollPosition > currentScrollPosition.value) {
-		isScrollingDown.value = true;
-		// transition header top with transform
-	} else {
-		isScrollingDown.value = false;
-	}
-
-	currentScrollPosition.value = scrollPosition;
-};
-
-onMounted(() => {
-	window.addEventListener('scroll', () => {
-		checkIfScrolledBelowHeroSection();
-		checkIfScrollingUpOrDown();
-	});
 });
 </script>
 
@@ -127,25 +79,6 @@ onMounted(() => {
 								>
 									{{ item.title }}
 								</NuxtLink>
-
-								<div
-									v-if="item.subpages"
-									class="dropdown-content"
-								>
-									<NuxtLink
-										v-for="key, value in item.subpages"
-										:key="key"
-										:to="key"
-										class="text-body-2 cursor-pointer hover:opacity-75 transition-opacity"
-										:class="{
-											'text-white': !isWhite,
-											'text-primary-black': isWhite,
-											'is-blur-hovered': hoveredNavItem !== index && hoveredNavItem !== null,
-										}"
-									>
-										{{ value }}
-									</NuxtLink>
-								</div>
 							</li>
 						</ul>
 					</div>
