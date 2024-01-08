@@ -323,7 +323,7 @@ if (!process.server) {
 
 	<div id="affiliate" class="border-b-2 flex flex-col md:flex-row border-dark">
 		<section class="w-full md:w-1/2 border-r-2 border-b-2 md:border-b-0 border-dark">
-			<div class="h-full flex items-center justify-center py-40 px-20 md:p-80 bg-blue">
+			<div class="h-full flex items-center justify-end py-40 px-20 md:p-80 bg-blue">
 				<img
 					src="@/assets/image/rytis.png"
 					width="640"
