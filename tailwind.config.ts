@@ -52,9 +52,10 @@ export default <Partial<Config>>{
 					},
 				],
 				'h1-mobile': [
-					'2.6rem',
+					'4rem',
 					{
 						fontWeight: '600',
+						lineHeight: '4.4rem',
 					},
 				],
 				h2: [

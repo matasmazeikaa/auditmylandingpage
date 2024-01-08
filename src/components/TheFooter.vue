@@ -1,51 +1,31 @@
 <script lang="ts" setup>
-const LINKS = [
-	{
-		title: 'About audit',
-		to: '/',
-	},
-	{
-		title: 'Hero CRO',
-		to: '/',
-	},
-	{
-		title: 'Examples',
-		to: '/',
-	},
-	{
-		title: 'Affiliate',
-		to: '/',
-	},
-	{
-		title: 'Contact',
-		to: '/',
-	},
-];
+import { NAVIGATION_LINKS } from '~/constants';
+
 </script>
 
 <template>
-	<footer class="border-t-2 border-dark section-padding bg-primary-black py-80">
+	<footer class="border-t-2 border-dark section-padding bg-primary-black py-40 md:py-80">
 		<div class="container mx-auto flex flex-col items-center justify-center">
-			<IconLogo class="mb-76"/>
-			<div class="mb-40">
+			<IconLogo class="mb-24 md:mb-76"/>
+			<div class="mb-40 grid grid-cols-1 md:grid-cols-4 place-items-center">
 				<NuxtLink
-					v-for="link in LINKS"
+					v-for="link in NAVIGATION_LINKS"
 					:key="link.title"
 					:to="link.to"
-					class="link hover:bg-blue transition-colors py-28 px-16"
+					class="link py-28 px-16"
 				>
 					{{ link.title }}
 				</NuxtLink>
 			</div>
 
 			<div class="mb-48 flex gap-16 flex-wrap">
-				<a target="_blank" href="https://twitter.com/auditmy_lp" class="flex justify-center items-center p-12 shadow-[2px_2px_0px_0px_#000] rounded-[10rem] border-2 border-solid border-dark">
+				<a target="_blank" href="https://twitter.com/auditmy_lp" class="social-media-link">
 					<IconX />
 				</a>
-				<a target="_blank" href="https://www.linkedin.com/company/audit-my-landing-page" class="flex justify-center items-center p-12 shadow-[2px_2px_0px_0px_#000] rounded-[10rem] border-2 border-solid border-dark">
+				<a target="_blank" href="https://www.linkedin.com/company/audit-my-landing-page" class="social-media-link">
 					<IconLinkedin />
 				</a>
-				<a target="_blank" href="https://www.instagram.com/auditmylandingpage" class="flex justify-center items-center p-12 shadow-[2px_2px_0px_0px_#000] rounded-[10rem] border-2 border-solid border-dark">
+				<a target="_blank" href="https://www.instagram.com/auditmylandingpage" class="social-media-link">
 					<IconInstagram />
 				</a>
 			</div>

@@ -17,14 +17,21 @@
 	@font-face {
 		font-family: 'Clash Grotesk Bold';
 		src: url(~/assets/fonts/ClashGrotesk-Bold.woff2);
-		font-weight: 400;
+		font-weight: 700;
 		font-display: swap;
 	}
 
 	@font-face {
 		font-family: 'Clash Grotesk Semibold';
 		src: url(~/assets/fonts/ClashGrotesk-Bold.woff2);
-		font-weight: 400;
+		font-weight: 600;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Clash Grotesk Medium';
+		src: url(~/assets/fonts/ClashGrotesk-Medium.woff2);
+		font-weight: 500;
 		font-display: swap;
 	}
 
@@ -43,18 +50,19 @@
 	}
 
 
+	.text-h1-mobile,
 	.text-h1,
 	.text-h2,
 	.text-h3,
-	.text-h4,
-	.text-h5 {
-		font-family: 'Clash Grotesk Bold';
+	.text-h4
+	 {
+		font-family: 'Clash Grotesk Semibold';
 	}
 
 	.link,
+	.text-h5,
 	button {
-		font-family: 'Clash Grotesk Semibold';
-
+		font-family: 'Clash Grotesk Medium';
 	}
 
 	.link {
@@ -63,6 +71,31 @@
 		font-style: normal;
 		font-weight: 600;
 		line-height: 24px; /* 150% */
+	}
+
+	.link:hover {
+		text-decoration: underline;
+		color: #495057;
+	}
+
+	.social-media-link {
+		display: flex;
+		width: 48px;
+		height: 48px;
+		justify-content: center;
+		align-items: center;
+		gap: 8px;
+		border-radius: 100px;
+		border: 2px solid var(--Black, #0C1416);
+		color: black;
+		background: var(--White, #FFF);
+		box-shadow: 2px 2px 0px 0px #000;
+		transition: all 0.1s ease-in-out;
+	}
+
+	.social-media-link:hover {
+		background: var(--Blue, #5258F3);
+		color: white;
 	}
 
 	@screen md {

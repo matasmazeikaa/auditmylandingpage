@@ -3,6 +3,7 @@ import {
 	disableBodyScroll,
 	enableBodyScroll,
 } from 'body-scroll-lock';
+import { NAVIGATION_LINKS } from '~/constants';
 
 interface Props {
 	white?: boolean;
@@ -11,29 +12,6 @@ interface Props {
 const headerRef = ref<HTMLElement | null>(null);
 
 defineProps<Props>();
-
-const items = computed(() => [
-	{
-		to: '/iranga',
-		title: 'About audit',
-	},
-	{
-		to: '/servisas',
-		title: 'Hero CRO',
-	},
-	{
-		to: '/apie-mus',
-		title: 'Examples',
-	},
-	{
-		to: '/kontaktai',
-		title: 'Affiliates',
-	},
-	{
-		to: '/kontaktai',
-		title: 'Contact',
-	},
-].filter(Boolean));
 
 const isMobileMenuOpen = ref(false);
 
@@ -49,14 +27,15 @@ watch(isMobileMenuOpen, (value) => {
 <template>
 	<header
 		ref="headerRef"
+		id="header"
 		class="header bg-blue"
 	>
-		<nav class="h-full px-20 lg:pl-40 border-b-2 border-t-2 border-black">
+		<nav class="h-full pl-20 py-20 pr-20 lg:pr-0 lg:py-0 lg:pl-40 border-b-2 border-t-2 border-black">
 			<div class="h-full flex justify-between items-center mx-auto">
 				<div class="flex justify-between items-center w-full ">
 					<NuxtLink
 						to="/"
-						class="w-[9.1rem] h-[3.2rem] md:h-40 lg:w-[12.4rem] mr-24 z-10"
+						class="w-[13rem] lg:w-[16.3rem] mr-24 z-10"
 						aria-label="Home"
 					>
 						<IconLogo
@@ -69,7 +48,7 @@ watch(isMobileMenuOpen, (value) => {
 							class="gap-32 hidden items-center lg:flex"
 						>
 							<li
-								v-for="(item, index) in items"
+								v-for="(item, index) in NAVIGATION_LINKS"
 								:key="item.title"
 								class="cursor-pointer dropdown"
 							>
@@ -83,12 +62,12 @@ watch(isMobileMenuOpen, (value) => {
 						</ul>
 					</div>
 
-					<div class="hidden lg:flex py-28 px-44 bg-blue-dark border-l-2 border-dark gap-8 items-center">
-						<span class="link text-white">Get an audit</span>
+					<a class="hidden lg:flex py-28 px-44 bg-blue-dark hover:bg-yellow hover:text-black text-white transition-colors cursor-pointer border-l-2 border-dark gap-8 items-center">
+						<span class="link text-inherit">Get an audit</span>
 						<div class="py-4 px-8 w-fit bg-white rounded-full">
 							<span class="link">$99</span>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div
 					id="hamburger-1"
@@ -116,7 +95,7 @@ watch(isMobileMenuOpen, (value) => {
 			<div class="bg-blue h-full flex flex-col items-center justify-center p-96">
 				<ul class="mb-40 flex flex-col text-center">
 					<li
-						v-for="item in items"
+						v-for="item in NAVIGATION_LINKS"
 						:key="item.title"
 					>
 						<NuxtLink
@@ -130,13 +109,13 @@ watch(isMobileMenuOpen, (value) => {
 				</ul>
 
 				<div class="mb-48 flex gap-16 flex-wrap">
-					<a target="_blank" href="https://twitter.com/auditmy_lp" class="flex justify-center items-center p-12 shadow-[2px_2px_0px_0px_#000] rounded-[10rem] border-2 border-solid border-dark">
+					<a target="_blank" href="https://twitter.com/auditmy_lp" class="social-media-link">
 						<IconX />
 					</a>
-					<a target="_blank" href="https://www.linkedin.com/company/audit-my-landing-page" class="flex justify-center items-center p-12 shadow-[2px_2px_0px_0px_#000] rounded-[10rem] border-2 border-solid border-dark">
+					<a target="_blank" href="https://www.linkedin.com/company/audit-my-landing-page" class="social-media-link">
 						<IconLinkedin />
 					</a>
-					<a target="_blank" href="https://www.instagram.com/auditmylandingpage" class="flex justify-center items-center p-12 shadow-[2px_2px_0px_0px_#000] rounded-[10rem] border-2 border-solid border-dark">
+					<a target="_blank" href="https://www.instagram.com/auditmylandingpage" class="social-media-link">
 						<IconInstagram />
 					</a>
 				</div>
@@ -146,6 +125,10 @@ watch(isMobileMenuOpen, (value) => {
 </template>
 
 <style>
+
+.main-btn:hover {
+	background: var(color-yellow);
+}
 
 /* Dropdown Button */
 .dropbtn {

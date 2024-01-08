@@ -42,44 +42,66 @@ My Hero CRO (Conversion Rate Optimization) service involves redesigning this cru
 const toggleAnswer = (index: number) => {
 	faqs.value[index].expanded = !faqs.value[index].expanded;
 };
+
+const setHeroCroSize = () => {
+	const aboutAudit = document.getElementById('about-audit');
+	const header = document.getElementById('header');
+	const aboutAuditHeight = aboutAudit?.offsetHeight;
+	const headerHeight = header?.offsetHeight;
+	const heroCro = document.getElementById('hero-cro');
+
+	if (heroCro && window.innerWidth > 1023) {
+		heroCro.style.height = `calc(100vh - ${aboutAuditHeight}px - ${headerHeight}px)`;
+	} else {
+		heroCro.style.height = 'auto';
+	}
+};
+
+if (!process.server) {
+	window.addEventListener('resize', () => {
+		setHeroCroSize();
+	});
+}
 </script>
 
 <template>
-	<section id="hero-cro" class="bg-blue py-80 md:py-200">
-		<div
-			class="container mx-auto text-center section-padding"
-		>
-			<Label class="mb-40">
-				CONVERSION RATE OPTIMIZATION TO GENERATE MORE SALES
-			</Label>
-			<h1 class="text-h1 mb-24">Grow your business with an in-depth landing page audit</h1>
-			<p class="text-body-1 mb-40">Get personalized insights to turn your landing page visitors into loyal customers.</p>
-			<Button class="mb-24">Order audit now</Button>
-			<p class="text-body-3">100% money-back guarantee if your conversion rate doesn't increase</p>
-		</div>
-	</section>
-
-	<div id="about-audit" class="border-t-2 bg-blue border-b-2 border-dark">
-		<section class="md:container mx-auto">
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-				<div class="border-b-2 md:border-r-2 lg:border-r-0 lg:border-b-0 border-dark md:pl-0 px-20 py-32 md:p-44">
-					<p class="mb-8 text-h5">SEO audit breakdown</p>
-					<p class="text-body-2">Using SEO tools to check the headlines structure and how well they perform on search engines.</p>
-				</div>
-				<div class="border-b-2 lg:border-l-2 lg:border-r-2 lg:border-b-0 border-dark px-20 py-32 md:p-44">
-					<p class="mb-8 text-h5">UX audit breakdown</p>
-					<p class="text-body-2">Making sure that visitors can easily navigate and reach content on the landing page.</p>
-				</div>
-				<div class="p-44 border-b-2 md:border-b-0 md:border-r-2 md:pl-0 px-20 py-32 lg:px-44 lg:border-r-2 border-dark ">
-					<p class="mb-8 text-h5">Content audit breakdown</p>
-					<p class="text-body-2">Evaluating content on the landing page and how well it describes the business or it’s services.</p>
-				</div>
-				<div class="px-20 py-32 md:p-44 pr-0">
-					<p class="mb-8 text-h5">Technical audit breakdown</p>
-					<p class="text-body-2">Using security tools to check the speed and responsiveness of the landing page for visitors.</p>
-				</div>
+	<div>
+		<section id="hero-cro" class="hero-cro flex items-center bg-blue py-80 md:py-[10vh]">
+			<div
+				class="container mx-auto text-center section-padding"
+			>
+				<Label class="mb-40">
+					CONVERSION RATE OPTIMIZATION TO GENERATE MORE SALES
+				</Label>
+				<h1 class="text-h1-mobile md:text-h1 mb-24">Grow your business with an in-depth landing page audit</h1>
+				<p class="text-body-1 mb-40">Get personalized insights to turn your landing page visitors into loyal customers.</p>
+				<Button class="mb-24">Order audit now</Button>
+				<p class="text-body-3">100% money-back guarantee if your conversion rate doesn't increase</p>
 			</div>
 		</section>
+
+		<div id="about-audit" class="border-t-2 bg-blue border-b-2 border-dark">
+			<section class="md:container mx-auto">
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+					<div class="border-b-2 md:border-r-2 lg:border-r-0 lg:border-b-0 border-dark md:pl-0 px-20 py-32 md:p-44">
+						<p class="mb-8 text-h5">SEO audit breakdown</p>
+						<p class="text-body-2">Using SEO tools to check the headlines structure and how well they perform on search engines.</p>
+					</div>
+					<div class="border-b-2 lg:border-l-2 lg:border-r-2 lg:border-b-0 border-dark px-20 py-32 md:p-44">
+						<p class="mb-8 text-h5">UX audit breakdown</p>
+						<p class="text-body-2">Making sure that visitors can easily navigate and reach content on the landing page.</p>
+					</div>
+					<div class="p-44 border-b-2 md:border-b-0 md:border-r-2 md:pl-0 px-20 py-44 lg:px-44 lg:border-r-2 border-dark ">
+						<p class="mb-8 text-h5">Content audit breakdown</p>
+						<p class="text-body-2">Evaluating content on the landing page and how well it describes the business or it’s services.</p>
+					</div>
+					<div class="px-20 py-32 md:p-44 pr-0">
+						<p class="mb-8 text-h5">Technical audit breakdown</p>
+						<p class="text-body-2">Using security tools to check the speed and responsiveness of the landing page for visitors.</p>
+					</div>
+				</div>
+			</section>
+		</div>
 	</div>
 
 	<div class="bg-blue-dark py-80 md:py-120 border-b-2 border-dark" >
@@ -114,39 +136,43 @@ const toggleAnswer = (index: number) => {
 		</section>
 	</div>
 
-	<div class="border-b-2 flex flex-col md:flex-row border-dark">
+	<div id="hero-cro-explain" class="border-b-2 flex flex-col md:flex-row border-dark">
 		<section class="w-full md:w-1/2 border-r-2 border-dark">
 			<div class="border-b-2 border-dark py-80 px-20 md:pt-120 md:p-80">
-				<h2 class="text-h1 mb-24">What is Hero CRO? </h2>
-				<p class="text-body-1 text-gray mb-24">Hero CRO (Conversion Rate Optimization) is an optimization of the top section of your landing page which visitors see at first after visiting the page.</p>
-				<div class="mb-40">
-					<div class="mb-16 flex gap-8 items-center">
-						<IconShapes />
-						<span class="text-h5">Optimizing the navigation</span>
+				<div class="max-w-[56rem] ml-auto">
+					<h2 class="text-h1 mb-24">What is Hero CRO? </h2>
+					<p class="text-body-1 text-black mb-24">Hero CRO (Conversion Rate Optimization) is an optimization of the top section of your landing page which visitors see at first after visiting the page.</p>
+					<div class="mb-40">
+						<div class="mb-16 flex gap-8 items-center">
+							<IconShapes />
+							<span class="text-h5">Optimizing the navigation</span>
+						</div>
+						<div class="mb-16 flex gap-8 items-center">
+							<IconShapes />
+							<span class="text-h5">Building trust through testimonials</span>
+						</div>
+						<div class="mb-16 flex gap-8 items-center">
+							<IconShapes />
+							<span class="text-h5">Ensuring clear content</span>
+						</div>
 					</div>
-					<div class="mb-16 flex gap-8 items-center">
-						<IconShapes />
-						<span class="text-h5">Building trust through testimonials</span>
-					</div>
-					<div class="mb-16 flex gap-8 items-center">
-						<IconShapes />
-						<span class="text-h5">Ensuring clear content</span>
-					</div>
+					<Button>
+						Order Hero CRO
+					</Button>
 				</div>
-				<Button>
-					Order Hero CRO
-				</Button>
 			</div>
 
 			<div class="py-80 px-20 md:p-80 border-b-2 border-dark mb:border-b-0">
-				<IconFigma class="mb-20" />
-				<p class="text-h5 mb-8">Shared Figma page to make changes easily implemented</p>
-				<p class="text-body-2">Figma shines with its incredible flexibility—perfect for making landing page changes a breeze. Developers love having all the elements in one spot for easy, creative tweaks!</p>
+				<div class="ml-auto max-w-[56rem]">
+					<IconFigma class="mb-20" />
+					<p class="text-h5 mb-8">Shared Figma page to make changes easily implemented</p>
+					<p class="text-body-2">Figma shines with its incredible flexibility—perfect for making landing page changes a breeze. Developers love having all the elements in one spot for easy, creative tweaks!</p>
+				</div>
 			</div>
 		</section>
 
-		<div class="bg-[#E6E6E6] w-full  md:w-1/2 py-40 px-20 md:p-60 bg-yellow flex items-center">
-			<svg class="w-full h-fit" width="561" height="795" viewBox="0 0 561 795" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<div class="bg-[#E6E6E6] w-full  md:w-1/2 py-40 px-20 md:p-60 bg-yellow flex justify-start items-center">
+			<svg class="w-full h-fit max-w-[57rem]" width="561" height="795" viewBox="0 0 561 795" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<g filter="url(#filter0_d_91_2161)">
 					<g clip-path="url(#clip0_91_2161)">
 						<rect x="0.105469" y="529" width="372" height="260" rx="12" fill="white"/>
@@ -295,7 +321,7 @@ const toggleAnswer = (index: number) => {
 		</div>
 	</div>
 
-	<div class="border-b-2 flex flex-col md:flex-row border-dark">
+	<div id="affiliate" class="border-b-2 flex flex-col md:flex-row border-dark">
 		<section class="w-full md:w-1/2 border-r-2 border-b-2 md:border-b-0 border-dark">
 			<div class="h-full flex items-center justify-center py-40 px-20 md:p-80 bg-blue">
 				<img
@@ -332,19 +358,19 @@ const toggleAnswer = (index: number) => {
 		</div>
 	</div>
 
-	<section class="border-b-2 border-dark bg-blue-dark px-20 py-80 md:py-120">
-		<div class="container mx-auto ">
+	<section id="faq" class="border-b-2 border-dark bg-blue-dark px-20 py-80 md:py-120">
+		<div class="container mx-auto max-w-[81.6rem]">
 			<h2 class="mb-16 text-center text-white text-h2">Frequently Asked Questions</h2>
 			<p class="mb-40 text-center text-white text-body-2 max-w-[56rem] mx-auto">Curious about something? Dive into frequently asked questions for quick answers. I am here to help you find what you're looking for.</p>
 
 			<div
 				v-for="(faq, index) in faqs"
 				:key="index"
-				class="faq-item"
+				class="faq-item "
 				:class="{ 'faq-item--active': faq.expanded }"
 				@click="toggleAnswer(index)"
 			>
-				<div class="question">
+				<div class="question flex gap-20">
 					<span class="text-h3 text-inherit">{{ faq.question }}</span>
 					<IconChevronDown
 						:class="{ 'text-dark rotate-180': faq.expanded }"
@@ -372,6 +398,13 @@ const toggleAnswer = (index: number) => {
 </template>
 
 <style>
+
+@media (min-width: 1023px) {
+	.hero-cro {
+		height: calc(100vh - 88px - 244px)
+	}
+}
+
 .fill-number {
 	fill: #5258F3;
 	stroke-width: 2px;

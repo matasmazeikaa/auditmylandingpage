@@ -17,9 +17,9 @@ withDefaults(defineProps<Props>(), {
 		<NuxtLink
 			v-if="to"
 			:class="{
-				'text-h5 flex justify-center items-center shadow-[2px_2px_0px_0px_#000] px-24 py-16 rounded-[10rem] border-2 border-solid border-dark': variant === 'primary',
-				'bg-white text-dark': color === 'white',
-				'bg-yellow text-dark': color === 'yellow',
+				'text-h5 flex justify-center items-center transition-colors shadow-[2px_2px_0px_0px_#000] px-24 py-16 rounded-[10rem] border-2 border-solid border-dark': variant === 'primary',
+				'bg-white text-dark hover:bg-yellow': color === 'white',
+				'bg-yellow text-dark hover:bg-white': color === 'yellow',
 			}"
 			:to="to"
 		>
@@ -30,9 +30,9 @@ withDefaults(defineProps<Props>(), {
 			v-else
 			class="relative"
 			:class="{
-				'text-h5 flex justify-center items-center shadow-[2px_2px_0px_0px_#000] px-24 py-16 rounded-[10rem] border-2 border-solid border-dark': variant === 'primary',
-				'bg-white text-dark': color === 'white',
-				'bg-yellow text-dark': color === 'yellow',
+				'text-h5 flex justify-center items-center transition-colors shadow-[2px_2px_0px_0px_#000] px-24 py-16 rounded-[10rem] border-2 border-solid border-dark': variant === 'primary',
+				'bg-white text-dark hover:bg-yellow': color === 'white',
+				'bg-yellow text-dark hover:bg-white': color === 'yellow',
 				'btn-primary--loading': isLoading,
 			}"
 		>
