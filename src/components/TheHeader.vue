@@ -3,7 +3,9 @@ import {
 	disableBodyScroll,
 	enableBodyScroll,
 } from 'body-scroll-lock';
-import { NAVIGATION_LINKS } from '~/constants';
+import {
+	AUDIT_LINK, NAVIGATION_LINKS,
+} from '~/constants';
 
 interface Props {
 	white?: boolean;
@@ -26,8 +28,8 @@ watch(isMobileMenuOpen, (value) => {
 
 <template>
 	<header
-		ref="headerRef"
 		id="header"
+		ref="headerRef"
 		class="header bg-blue"
 	>
 		<nav class="h-full pl-20 py-20 pr-20 lg:pr-0 lg:py-0 lg:pl-40 border-b-2 border-t-2 border-black">
@@ -54,6 +56,7 @@ watch(isMobileMenuOpen, (value) => {
 							>
 								<NuxtLink
 									:to="item.to"
+									:target="item.target"
 									class="py-28 px-16 link"
 								>
 									{{ item.title }}
@@ -62,7 +65,7 @@ watch(isMobileMenuOpen, (value) => {
 						</ul>
 					</div>
 
-					<a class="hidden lg:flex py-28 px-44 bg-blue-dark hover:bg-yellow hover:text-black text-white transition-colors cursor-pointer border-l-2 border-dark gap-8 items-center">
+					<a :href="AUDIT_LINK" target="_blank" class="hidden lg:flex py-28 px-44 bg-blue-dark hover:bg-yellow hover:text-black text-white transition-colors cursor-pointer border-l-2 border-dark gap-8 items-center">
 						<span class="link text-inherit">Get an audit</span>
 						<div class="py-4 px-8 w-fit bg-white rounded-full">
 							<span class="link">$99</span>
@@ -100,6 +103,7 @@ watch(isMobileMenuOpen, (value) => {
 					>
 						<NuxtLink
 							:to="item.to"
+							:target="item.target"
 							class="link hover:opacity-75 transition-opacity block text-black p-20"
 							@click="isMobileMenuOpen = false"
 						>
@@ -142,7 +146,7 @@ watch(isMobileMenuOpen, (value) => {
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: flex;
 }
 
 /* Dropdown Content (Hidden by Default) */

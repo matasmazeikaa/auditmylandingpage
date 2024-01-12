@@ -1,8 +1,8 @@
 const APP_META = {
-	title: 'myApp',
-	description: 'myApp',
+	title: 'Audit My Landing Page',
+	description: "Optimize your landing page with Audit My Landing Page's $99 Hero CRO audit. Improve SEO, enhance navigation, and boost conversions. Backed by a 100% money-back guarantee. Order now. © 2024 Audit My Landing Page.",
 	favicon: '/favicon.ico',
-	url: 'https://myapp.com',
+	url: 'https://auditmylandingpage.com',
 	language: 'en',
 };
 

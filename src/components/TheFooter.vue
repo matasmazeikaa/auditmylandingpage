@@ -7,11 +7,12 @@ import { NAVIGATION_LINKS } from '~/constants';
 	<footer class="border-t-2 border-dark section-padding bg-primary-black py-40 md:py-80">
 		<div class="container mx-auto flex flex-col items-center justify-center">
 			<IconLogo class="mb-24 md:mb-76"/>
-			<div class="mb-40 grid grid-cols-1 md:grid-cols-4 place-items-center">
+			<div class="mb-40 grid grid-cols-1 md:grid-cols-5 place-items-center">
 				<NuxtLink
 					v-for="link in NAVIGATION_LINKS"
 					:key="link.title"
 					:to="link.to"
+					:target="link.target"
 					class="link py-28 px-16"
 				>
 					{{ link.title }}

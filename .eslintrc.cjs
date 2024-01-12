@@ -277,6 +277,7 @@ module.exports = {
 				],
 			},
 		],
+		'vue/no-multiple-template-root': 'off',
 
 		// Miscellaneous
 		'vue/no-v-html': 'off',

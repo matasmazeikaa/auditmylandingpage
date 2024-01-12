@@ -4,6 +4,7 @@ interface Props {
 	color: 'dark' | 'white' | 'yellow';
 	to?: string;
 	isLoading?: boolean;
+	target?: string;
 }
 
 withDefaults(defineProps<Props>(), {
@@ -22,6 +23,7 @@ withDefaults(defineProps<Props>(), {
 				'bg-yellow text-dark hover:bg-white': color === 'yellow',
 			}"
 			:to="to"
+			:target="target"
 		>
 			<span class="text-button whitespace-pre"><slot /></span>
 		</NuxtLink>
