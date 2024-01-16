@@ -56,7 +56,7 @@ const setHeroCroSize = () => {
 
 	if (heroCro && window.innerWidth > 1023) {
 		heroCro.style.height = `calc(100vh - ${aboutAuditHeight}px - ${headerHeight}px)`;
-	} else {
+	} else if (heroCro)) {
 		heroCro.style.height = 'auto';
 	}
 };
