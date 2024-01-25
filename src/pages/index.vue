@@ -217,6 +217,12 @@ if (!process.server) {
 		</div>
 	</div>
 
+	<section class="py-80 md:py-120 px-20">
+		<div class="container mx-auto">
+			<div class="senja-embed" data-id="a82fe282-69c5-42d6-b847-cea0ba805b47" data-lazyload="false"></div>
+		</div>
+	</section>
+
 	<section id="faq" class="border-b-2 border-dark bg-blue-dark px-20 py-80 md:py-120">
 		<div class="container mx-auto max-w-[81.6rem]">
 			<h2 class="mb-16 text-center text-white text-h2">Frequently Asked Questions</h2>

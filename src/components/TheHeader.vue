@@ -32,6 +32,9 @@ watch(isMobileMenuOpen, (value) => {
 		ref="headerRef"
 		class="header bg-blue"
 	>
+		<div class="py-8 px-20 flex justify-center bg-yellow">
+			<p class="text-body-3 ">🔥 <strong class="bolder">50% SALE</strong> for Landing Page Audit & Hero CRO <strong class="bolder">CODE: GROWTH50</strong></p>
+		</div>
 		<nav class="h-full pl-20 py-20 pr-20 lg:pr-0 lg:py-0 lg:pl-40 border-b-2 border-t-2 border-black">
 			<div class="h-full flex justify-between items-center mx-auto">
 				<div class="flex justify-between items-center w-full ">

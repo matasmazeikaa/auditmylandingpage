@@ -12,6 +12,13 @@
 <script setup lang="ts">
 useHead({
 	titleTemplate: 'Audit My Landing Page',
+	script: [
+		{
+			src: 'https://static.senja.io/dist/platform.js',
+			async: true,
+			defer: true,
+		},
+	],
 	link: [
 		{
 			rel: 'apple-touch-icon',
