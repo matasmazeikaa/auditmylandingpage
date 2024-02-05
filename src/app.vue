@@ -32,8 +32,11 @@ const loadGTAGAfterHydration = () => {
 onMounted(() => {
 	setTimeout(() => {
 		loadSenjaScriptAfterHydration();
-		loadGTAGAfterHydration();
 	}, 1500);
+
+	setTimeout(() => {
+		loadGTAGAfterHydration();
+	}, 4000);
 });
 
 useHead({

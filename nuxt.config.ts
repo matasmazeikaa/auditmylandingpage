@@ -69,7 +69,6 @@ export default defineNuxtConfig({
 		'@vueuse/nuxt',
 		'nuxt-headlessui',
 		'@nuxtjs/eslint-module',
-		'nuxt-gtag',
 	],
 
 	eslint: {
