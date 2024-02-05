@@ -21,10 +21,6 @@ export default defineNuxtConfig({
 		modules: '~/modules',
 	},
 
-	gtag: {
-		id: 'G-72DKRQNVKK'
-	},
-
 	// runtime config
 	runtimeConfig: {
 		public: {
@@ -73,7 +69,7 @@ export default defineNuxtConfig({
 		'@vueuse/nuxt',
 		'nuxt-headlessui',
 		'@nuxtjs/eslint-module',
-		'nuxt-gtag'
+		'nuxt-gtag',
 	],
 
 	eslint: {

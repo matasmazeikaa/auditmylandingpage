@@ -184,7 +184,9 @@ if (!process.server) {
 		<section class="w-full md:w-1/2 border-r-2 border-b-2 md:border-b-0 border-dark">
 			<div class="h-full flex items-center justify-end py-40 px-20 md:p-80 bg-blue">
 				<img
-					src="@/assets/image/rytis.png"
+					src="@/assets/image/rytis.webp"
+					alt="Image of Rytis"
+					loading="lazy"
 					width="640"
 					height="640"
 				/>
@@ -219,6 +221,7 @@ if (!process.server) {
 
 	<section class="py-80 md:py-120 px-20">
 		<div class="container mx-auto">
+			<h2 class="mb-64 text-center text-dark text-h2">Reviews from founders</h2>
 			<div class="senja-embed" data-id="a82fe282-69c5-42d6-b847-cea0ba805b47" data-lazyload="false"></div>
 		</div>
 	</section>

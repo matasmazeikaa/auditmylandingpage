@@ -10,15 +10,34 @@
 </template>
 
 <script setup lang="ts">
+
+const loadSenjaScriptAfterHydration = () => {
+	const script = document.createElement('script');
+
+	script.src = 'https://static.senja.io/dist/platform.js';
+	script.async = true;
+	script.defer = true;
+	document.head.appendChild(script);
+};
+
+const loadGTAGAfterHydration = () => {
+	const script = document.createElement('script');
+
+	script.src = 'https://www.googletagmanager.com/gtag/js?id=G-72DKRQNVKK';
+	script.async = true;
+	script.defer = true;
+	document.head.appendChild(script);
+};
+
+onMounted(() => {
+	setTimeout(() => {
+		loadSenjaScriptAfterHydration();
+		loadGTAGAfterHydration();
+	}, 1500);
+});
+
 useHead({
 	titleTemplate: 'Audit My Landing Page',
-	script: [
-		{
-			src: 'https://static.senja.io/dist/platform.js',
-			async: true,
-			defer: true,
-		},
-	],
 	link: [
 		{
 			rel: 'apple-touch-icon',

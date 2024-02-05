@@ -23,7 +23,7 @@
 
 	@font-face {
 		font-family: 'Clash Grotesk Semibold';
-		src: url(~/assets/fonts/ClashGrotesk-Bold.woff2);
+		src: url(~/assets/fonts/ClashGrotesk-Semibold.woff2);
 		font-weight: 600;
 		font-display: swap;
 	}
@@ -58,7 +58,10 @@
 
 
 	.text-h1-mobile,
-	.text-h1,
+	.text-h1 {
+		font-family: 'Clash Grotesk Bold';
+	}
+
 	.text-h2,
 	.text-h3,
 	.text-h4

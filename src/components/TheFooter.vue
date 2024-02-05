@@ -20,13 +20,13 @@ import { NAVIGATION_LINKS } from '~/constants';
 			</div>
 
 			<div class="mb-48 flex gap-16 flex-wrap">
-				<a target="_blank" href="https://twitter.com/auditmy_lp" class="social-media-link">
+				<a aria-label="Link to X" target="_blank" href="https://twitter.com/auditmy_lp" class="social-media-link">
 					<IconX />
 				</a>
-				<a target="_blank" href="https://www.linkedin.com/company/audit-my-landing-page" class="social-media-link">
+				<a aria-label="Link to Linkedin" target="_blank" href="https://www.linkedin.com/company/audit-my-landing-page" class="social-media-link">
 					<IconLinkedin />
 				</a>
-				<a target="_blank" href="https://www.instagram.com/auditmylandingpage" class="social-media-link">
+				<a aria-label="Link to Instagram" target="_blank" href="https://www.instagram.com/auditmylandingpage" class="social-media-link">
 					<IconInstagram />
 				</a>
 			</div>
